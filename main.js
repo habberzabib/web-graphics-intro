@@ -1,0 +1,76 @@
+//SETUP CANVAS (CNV) AND 2D GRAPHICS CONTEXT
+let cnv = document.getElementById("myCanvas");
+let ctx = cnv.getContext("2d");
+cnv.width = 600;
+cnv.height = 400;
+
+//DRAW FILLED IN RECTANGLE
+ctx.fillStyle = "blue";
+ctx.fillRect(50, 50, 100, 60);
+// x, y, w, h
+// (x,y) = top-left corner of the rectangle
+
+//OUTLINED RECT
+ctx.strokeStyle = "blue";
+ctx.lineWidth = 4;
+ctx.strokeRect(50, 150, 100, 60);
+
+//SOLID TEXT
+ctx.font = "30px Arial";
+ctx.fillStyle = "green";
+ctx.fillText("Canvas Text", 250, 100);
+
+//OUTLINED TEXT
+ctx.font = "36px Times";
+ctx.lineWidth = 1;
+ctx.strokeStyle = "green";
+ctx.strokeText("Canvas Text", 250, 200);
+
+//LINE
+ctx.lineWidth = 5;
+ctx.strokeStyle = "rgb(0, 0, 255)";
+ctx.beginPath();
+ctx.moveTo(50, 250); //START AT (x1, y1)
+ctx.lineTo(150, 300); //GO TO (x2, y2)
+ctx.stroke(); //DRAW LINE
+
+//SOLID TRIANGLE
+ctx.fillStyle = "#00FF00";
+ctx.beginPath();
+ctx.moveTo(250, 250);
+ctx.lineTo(300, 250);
+ctx.lineTo(275, 300);
+ctx.fill();
+
+//OUTLINED TRIANGLE
+ctx.lineWidth = 2;
+ctx.strokeStyle = "green";
+ctx.beginPath();
+ctx.moveTo(350, 250);
+ctx.lineTo(400, 250);
+ctx.lineTo(375, 300);
+ctx.closePath();
+ctx.stroke();
+//CAN BE APPLIED TO ANY N-SIDED POLYGON WITH MORE ctx.lineTo()
+
+//SOLID CIRCLE
+ctx.fillStyle = "blue";
+ctx.beginPath();
+ctx.arc(275, 350, 25, 0, 2 * Math.PI);
+// x, y, r, start angle (in radians) dip, end angle
+//(x, y) = center of the circle
+ctx.fill();
+
+//OUTLINED CIRCLE
+ctx.lineWidth = 3;
+ctx.strokeStyle = "blue";
+ctx.beginPath();
+ctx.arc(375, 350, 25, 0, 2 * Math.PI);
+ctx.stroke();
+
+//DRAW AN IMAGE
+//load the img in index.html and set display to none
+let htmlImg = document.getElementById("html-logo");
+ctx.drawImage(htmlImg, 475, 50);
+ctx.drawImage(htmlImg, 495, 175, 30, 30);
+//inputing width and height parameters are optional
