@@ -59,11 +59,11 @@ ctx.stroke();
 ctx.lineWidth = 2;
 ctx.strokeStyle = "red";
 ctx.beginPath();
-ctx.moveTo(375, 225);
-ctx.lineTo(425, 200);
-ctx.lineTo(450, 250);
-ctx.lineTo(400, 250);
-ctx.lineTo(350, 200);
+ctx.moveTo(400, 275);
+ctx.lineTo(425, 250);
+ctx.lineTo(425, 275);
+ctx.lineTo(400, 300);
+ctx.lineTo(375, 300);
 
 ctx.closePath();
 ctx.stroke();
